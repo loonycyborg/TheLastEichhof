@@ -15,6 +15,6 @@ dist_data_DATA = BEER.DAT
 
 EXTRA_DIST = README LICENSE.GPL
 
-beer_CFLAGS = `allegro-config --cflags`
+beer_CFLAGS = `allegro-config --cflags` -fcommon
 beer_LDFLAGS = `allegro-config --libs`
 beer_CPPFLAGS += `allegro-config --cppflags`
