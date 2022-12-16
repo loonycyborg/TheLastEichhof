@@ -276,6 +276,10 @@ void *opendatabase(char *file)
    int    mode;
    char byte;
 
+#ifndef DATADIR
+#define DATADIR "."
+#endif
+
    char *fullpath = alloca (strlen (DATADIR) + 1 + strlen (file) + 1);
    sprintf (fullpath, "%s/%s", DATADIR,  file);
 
