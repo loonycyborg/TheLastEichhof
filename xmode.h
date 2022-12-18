@@ -123,6 +123,7 @@ static void retrace() {}
 #define FLASH_COLOUR 230
 
 void setpalette(PALETTE ptr);
+void copycolor(int c1, int c2);
 void setcolor(int c, int r, int g, int b);
 void setvanillapalette(int c);
 void setstandardpalette(void);
