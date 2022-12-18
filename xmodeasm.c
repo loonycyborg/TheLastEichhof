@@ -531,9 +531,9 @@ void glowout()
     for (c = 0; c <= 255; c++) {
       RGB rgb;
 
-      rgb.r = max(palette[c].r - i, 0);
-      rgb.g = max(palette[c].g - i, 0);
-      rgb.b = max(palette[c].b - i, 0);
+      rgb.r = MAX(palette[c].r - i, 0);
+      rgb.g = MAX(palette[c].g - i, 0);
+      rgb.b = MAX(palette[c].b - i, 0);
 
       tmp_palette[c] = rgb;
     }
@@ -562,9 +562,9 @@ void glowin (int dir)
     for (c = 0; c <= 255; c++) {
       RGB rgb;
 
-      rgb.r = max(palette[c].r - i, 0);
-      rgb.g = max(palette[c].g - i, 0);
-      rgb.b = max(palette[c].b - i, 0);
+      rgb.r = MAX(palette[c].r - i, 0);
+      rgb.g = MAX(palette[c].g - i, 0);
+      rgb.b = MAX(palette[c].b - i, 0);
 
       tmp_palette[c] = rgb;
     }

@@ -185,7 +185,7 @@ void deffoe (short foe, short x, short y, short x0, short y0)
     ptr->dy = our_y0;
     ptr->z1 = our_z1;
 
-    ptr->pixelcnt = max(our_x0, our_y0);
+    ptr->pixelcnt = MAX(our_x0, our_y0);
     ptr->dz = our_x0 / 2;
   }
 
