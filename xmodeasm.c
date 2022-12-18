@@ -424,7 +424,7 @@ void putsprite(int sprite, int x, int y, int n)
   masked_blit(s, pages[page], 0, 0, x, y, s->w, s->h);
 }
 
-static putflash (int handle, int x, int y, int n)
+static void putflash (int handle, int x, int y, int n)
 {
   BITMAP *s = _sprite[handle].bmp_silhouette[n];
 
