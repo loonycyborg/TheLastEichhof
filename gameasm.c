@@ -2,6 +2,7 @@
 #define MAIN_MODULE
 #include "baller.h"
 #include "xmode.h"
+#include "sound.h"
 
 /*  Structure to save a complete position during the game.
     This is used to get back to a 'try again' point if the
