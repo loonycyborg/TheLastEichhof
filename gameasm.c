@@ -73,7 +73,7 @@ int defarm (int x, int y, struct armstrc *arm)
      shot:      Which shot should we define?
      x, y:      Define coordinates.
      addr:      addr of shot, that defines this shot. */
-int defshot (int shot, int x, int y, struct anishot *addr)
+void defshot (int shot, int x, int y, struct anishot *addr)
 {
   int ctr = MAXSHOTS;
   struct anishot *ptr = _shot;
@@ -101,7 +101,7 @@ int defshot (int shot, int x, int y, struct anishot *addr)
   ptr->power = ss->power;
   ptr->speed = ss->speed;
 
-  return ptr->object = defobject(intindex[ss->sprite],
+  ptr->object = defobject(intindex[ss->sprite],
                            x + ss->shotx, y + ss->shoty, OBJ_LOW);
 
 }
