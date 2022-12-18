@@ -473,7 +473,7 @@ void *loadfiledirect(char *file, int flags)
 	 fsize -= 65000; p += 65000;
       }
       nread = fread(p, 1, fsize, filvar);
-      close(filvar);
+      fclose(filvar);
 
       buffer(file, ptr, msize, flags);
    }
