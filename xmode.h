@@ -156,6 +156,7 @@ unsigned long getobjectpos(int object);
 
 #define DISPLAY_SCALE 2
 
+void toggle_fullscreen(void);
 void setxmode(void);
 void screenmode(int mode);
 
