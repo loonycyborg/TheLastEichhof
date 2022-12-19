@@ -33,18 +33,18 @@ int playscore;                /* Remaining score. */
 short const10d;               /* Faster Division. */
 
 /* Function to access field in starstrc array. */
-int starstrc_member (unsigned char *data, int i, int member)
+int starstrc_member (starstrc_ptr data, int i, int member)
 {
-  data += i * STARSTRC_SIZE;
-  return data[member] + (data[member + 1] << 8);
+  unsigned char *ptr = (unsigned char*)data + i * STARSTRC_SIZE;
+  return ptr[member] + (ptr[member + 1] << 8);
 }
 
-void set_starstrc_member (unsigned char *data, int i, int member,
+void set_starstrc_member (starstrc_ptr data, int i, int member,
                          unsigned short int value)
 {
-  data += i * STARSTRC_SIZE;
-  data[member] = value & 0x00FF;
-  data[member + 1] = (value & 0xFF00) >> 8;
+  unsigned char *ptr = (unsigned char*)data + i * STARSTRC_SIZE;
+  ptr[member] = value & 0x00FF;
+  ptr[member + 1] = (value & 0xFF00) >> 8;
 }
 
 /*

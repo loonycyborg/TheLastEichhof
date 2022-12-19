@@ -58,7 +58,7 @@ Description: Defines a STARFIELD, but doesn't animate it
 	     '*star' will get destroyed if used.
 ------------------------------------------------------*/
 
-void defstarfield(int n, unsigned char *star)
+void defstarfield(int n, starstrc_ptr star)
 {
    int   i;
 

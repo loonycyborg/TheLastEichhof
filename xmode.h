@@ -50,12 +50,6 @@
 
 #define STARSTRC_SIZE 8;
 
-/* Function to access field in starstrc array. */
-int starstrc_member (unsigned char *data, int i, int member);
-
-void set_starstrc_member (unsigned char *data, int i, int member,
-                         unsigned short int value);
-
 struct sprstrc {
 
    short   xs;			// x size of sprite.
@@ -108,13 +102,19 @@ struct lowspr {
    A STARFIELD consists of an array of STARS.
 */
 
-struct starstrc {
+typedef struct starstrc {
 
    int   x, y;
    int   color;
    int   speed;
 
-};
+} *starstrc_ptr;
+
+/* Function to access field in starstrc array. */
+int starstrc_member (starstrc_ptr data, int i, int member);
+
+void set_starstrc_member (starstrc_ptr data, int i, int member,
+                         unsigned short int value);
 
 void create_sprstrc (struct sprstrc **, unsigned char *);
 
@@ -132,7 +132,7 @@ void glowin(int dir);
 void glowout(void);
 int cyclepalette(int c1, int c2, int pos);
 
-void defstarfield(int n, unsigned char *star);
+void defstarfield(int n, starstrc_ptr star);
 void gostarfield(void);
 void stopstarfield(void);
 void killstarfield(void);
@@ -243,7 +243,7 @@ struct sfieldstrc {
    int    active;		// Field active?
    int    go;
    int    n;			// Number of STARS in field.
-   unsigned char *star;	// Pointer to array of stars.
+   starstrc_ptr star;		// Pointer to array of stars.
 
 };
 
